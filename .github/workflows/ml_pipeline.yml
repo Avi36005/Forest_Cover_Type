@@ -23,9 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install numpy pandas scikit-learn matplotlib mlflow jupyter nbconvert joblib
 
-      - name: Run Notebook
+      - name: Convert Notebook and Run
         run: |
-          jupyter nbconvert --to script forest_cover_type.ipynb
+          jupyter nbconvert --to script forest_cover_type.ipynb --output forest_cover_type.py
           python forest_cover_type.py
 
       - name: Build Docker Image
